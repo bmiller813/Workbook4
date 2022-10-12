@@ -27,7 +27,7 @@ console.log("LAST: ", last);
 
 
 //OLD HARD WAY - TRADITIONAL MATHY FOR LOOP
-for (let i = 0; i < kids.length; i++) { //NOTE LENGTH IS NOT 3 HARD-CODED
+for (let i = 0; i < getKids.length; i++) { //NOTE LENGTH IS NOT 3 HARD-CODED
     console.log("INDEX KID:", i, kids[i]);
 }
 
