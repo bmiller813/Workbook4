@@ -1,5 +1,5 @@
 function getKids() {
-    retrun[ //[DECLARE ARRAY/LIST]
+    return[ //[DECLARE ARRAY/LIST]
         "Natalie", //index 0
         "Brittany",// index 1 (second)
         "Zachary"// length - 1
