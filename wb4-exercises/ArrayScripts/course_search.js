@@ -30,7 +30,7 @@ let courses = [
         Fee: "50.00",
     },
     {
-        CourseId: "PROJ500",
+        CourseId: "PROG500",
         Title: "Introduction to Angular",
         Location: "Classroom 1",
         StartDate: "04/25/23",
@@ -38,25 +38,25 @@ let courses = [
     }
 ];
 
+let courseNames = ["PROG100", "PROG200", "PROG300", "PROG400", "PROG500"];
+
 //Function that searches each section
 function getCourseInfo(courseInfo) {
-    // let myCourse = courses.CourseId;
-
-    //for (let r = 0; r < myCourse.length; r++){
     for (let r = 0; r < courses.length; r++) {
         if (courseInfo == courses[r].CourseId) {
-            console.log("Introduction to SQL and Databases");
-        }else{
-            console.log("You cracked the case!!!");
+            console.log(courses[r].Title);
+        } else {
+            //console.log("You cracked the case!!!");
         }
     };
 }
 
 //test
-getCourseInfo("PROG400");
+//getCourseInfo("PROG100"); //THIS IS WORKING SO FAR
 
 //main
-//for (let i = 0; i < courses.length; i++) {
-  //  getCourseInfo("PROG400");
-//}
+for (let i = 0; i < courseNames.length; i++) {
+    console.log(courseNames[i]);
+    getCourseInfo(courseNames[i]);
+}
 
