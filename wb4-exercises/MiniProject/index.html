@@ -1,34 +1,73 @@
 <!-- FoodMenu - Workbook4, Section 3-16-->
-
+<style>
+    body{
+        color:blanchedalmond;
+        
+    }
+</style>
 <body>
-    <select size="1">
-        <option value="drinks">Drinks</option>
-        <option value="entrees">Entrees</option>
-        <option value="desserts">Desserts</option>
-    </select>
+    <div id="menu">
+        <select id="category" size="3" class="naked inline">
+            <option value="drinks" class="big-target">Drinks</option>
+            <option value="entrees" class="big-target">Entrees</option>
+            <option value="desserts" class="big-target">Desserts</option>
+        </select>
+        <div class="inline">
+            <select id="results" size="12" class="naked inline"></select>
+        </div>
+    </div>
 </body>
 <script>
     let menu = {
-    drinks: [
-        "Water",
-        "Tea",
-        "Sweet Tea",
-        "Coke",
-        "Dr. Pepper",
-        "Sprite"
-    ],
-    entrees: [
-        "Hamburger w/ Fries",
-        "Grilled Cheese w/ Tater Tots",
-        "Grilled Chicken w/ Veggies",
-        "Chicken Fried Steak w/ Mashed Potatoes",
-        "Fried Shrimp w/ Coleslaw",
-        "Veggie Plate"
-    ],
-    desserts: [
-        "Cheesecake",
-        "Chocolate Cake",
-        "Snickerdoodle Cookie"
-    ]
-};
+        drinks: [
+            "Water",
+            "Tea",
+            "Sweet Tea",
+            "Coke",
+            "Dr. Pepper",
+            "Sprite"
+        ],
+        entrees: [
+            "Hamburger w/ Fries",
+            "Grilled Cheese w/ Tater Tots",
+            "Grilled Chicken w/ Veggies",
+            "Chicken Fried Steak w/ Mashed Potatoes",
+            "Fried Shrimp w/ Coleslaw",
+            "Veggie Plate"
+        ],
+        desserts: [
+            "Cheesecake",
+            "Chocolate Cake",
+            "Snickerdoodle Cookie"
+        ]
+    };
+    //1. find parent list and listen for its click event.
+    let categoryElement = document.getElementById("category");
+
+    categoryElement.addEventListener("change", () => {
+        let selectedOption = categoryElement.selectedOptions[0];
+        let value = selectedOption.value;
+        console.log(value);
+
+        //2. find selected category value corresponding list of strings in the data
+        let list = menu[value];
+
+        //3. clear any existing options
+        let results = document.getElementById("results");
+        results.innerHTML = ""; //quick way to clear all options
+
+        //BONUS we set size to list length
+        results.setAttribute("size", list.length);
+
+        //4. add an option for each string
+        for(i=0; i<list.length; i++){
+            let option = document.createElement("option");
+            option.innerHTML = list[i]
+            options.setAttribute("class", "big-target"); //bonus
+            results.appendChild(option);
+        };
+    });//END CHANGE LISTENER FUNCTION
+
+
+
 </script>
